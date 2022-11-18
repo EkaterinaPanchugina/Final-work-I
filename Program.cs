@@ -3,9 +3,22 @@
  на старте выполнения алгориrма. При решении не рекомендуется пользоваться коллекциями, лучше обойтись исключительно массивами. 
 Пример: ["hello", "2", "world", ":-)"] -> ["2", ":-)"]*/
 
-
-
-
+//Метод поиска элементов, где не более 3 символов
+string[] GetArrayLessOrEqualSymbols(string[] array)
+{
+    string[] newArray = new string[0];
+    int indexNewArray = 0;
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (array[i].Length <= 3)
+        {
+            Array.Resize<string>(ref newArray, newArray.Length + 1);
+            newArray[indexNewArray] = array[i];
+            indexNewArray++;
+        }
+    }
+    return newArray;
+}
 
 // Создаем изначальный массив размерностью 5 и новый массив, который получим из метода 
 
