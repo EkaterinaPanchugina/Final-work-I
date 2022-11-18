@@ -20,8 +20,25 @@ string[] GetArrayLessOrEqualSymbols(string[] array)
     return newArray;
 }
 
+// Метод вывода на печать
+void PrintArrayToConsole(string[] array)
+{
+    Console.Write("");
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (i != array.Length -1) Console.Write($"{array[i]}, ");
+        else Console.Write($"{array[i]} ");
+    }
+    Console.WriteLine("");
+}
+
 // Создаем изначальный массив размерностью 5 и новый массив, который получим из метода 
 
 string[] array = new string[5] {"hello", "2", "world", ":-)", "123456"};
 string[] newArray = GetArrayLessOrEqualSymbols(array);
 
+Console.WriteLine("Your array:");
+PrintArrayToConsole(array);
+
+Console.WriteLine("Array with elements <= 3:");
+PrintArrayToConsole(newArray);
